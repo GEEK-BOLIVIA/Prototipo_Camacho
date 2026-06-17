@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEXLABOR - Biblioteca Legal Laboral</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <!-- TOP NAVBAR -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-[1700px] mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Left: Logo & Nav -->
+            <div class="flex items-center gap-8">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="bg-[#0b2240] text-white p-2 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-[#0b2240]">LEXLABOR</span>
+                        <span class="block text-[9px] uppercase tracking-widest text-slate-400 font-bold -mt-1">Biblioteca Legal Laboral</span>
+                    </div>
+                </div>
+
+                <!-- Nav Links -->
+                <nav class="hidden xl:flex items-center gap-5 text-sm font-medium text-slate-600">
+                    <a href="#" class="hover:text-[#0b2240] transition-colors">Inicio</a>
+                    <a href="#" class="text-[#1d4ed8] border-b-2 border-[#1d4ed8] py-5 px-1 font-semibold">Biblioteca Laboral</a>
+                    <a href="#" class="hover:text-[#0b2240] transition-colors">Legislación Vigente</a>
+                    <a href="#" class="hover:text-[#0b2240] transition-colors">Jurisprudencia</a>
+                    <a href="#" class="hover:text-[#0b2240] transition-colors">Modelos y Formatos</a>
+                    <a href="#" class="hover:text-[#0b2240] transition-colors">Boletines</a>
+                    <a href="#" class="hover:text-[#0b2240] transition-colors">Capacitación</a>
+                </nav>
+            </div>
+
+            <!-- Right Controls -->
+            <div class="flex items-center gap-4">
+                <!-- Mi Suscripción Button -->
+                <button class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-colors shadow-sm">
+                    <i class="fa-solid fa-crown text-xs"></i>
+                    Mi Suscripción
+                </button>
+
+                <!-- Notifications -->
+                <div class="relative cursor-pointer p-2 hover:bg-slate-100 rounded-full transition-colors">
+                    <i class="fa-regular fa-bell text-xl text-slate-600"></i>
+                    <span class="absolute top-1 right-1 bg-red-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">9</span>
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="flex items-center gap-2 pl-2 border-l border-slate-200 cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center">
+                        AM
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN WRAPPER GRID -->
+    <div class="max-w-[1700px] mx-auto px-6 py-6 grid grid-cols-12 gap-6">
+
+        <!-- 1. LEFT SIDEBAR -->
+        <aside class="col-span-12 lg:col-span-2 flex flex-col gap-6">
+            
+            <!-- User Info Card -->
+            <div class="bg-[#0b1a30] text-white p-4 rounded-xl flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-user text-slate-300"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-slate-100">¡Hola, Alejandro!</h4>
+                        <p class="text-xs text-slate-400">Suscriptor Profesional</p>
+                    </div>
+                </div>
+                <div class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-medium text-center py-1.5 rounded-lg">
+                    Activo hasta 15/06/2025
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="bg-white rounded-xl border border-slate-200 p-3 flex flex-col gap-1 shadow-sm">
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider px-3 mb-2">Navegación</p>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 bg-slate-100 text-[#0b2240] font-semibold rounded-lg text-sm transition-colors">
+                    <i class="fa-solid fa-chart-pie w-5 text-slate-500"></i> Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 hover:bg-slate-50 text-slate-600 rounded-lg text-sm transition-colors">
+                    <i class="fa-solid fa-download w-5 text-slate-400"></i> Mis Descargas
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 hover:bg-slate-50 text-slate-600 rounded-lg text-sm transition-colors">
+                    <i class="fa-regular fa-star w-5 text-slate-400"></i> Favoritos
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 hover:bg-slate-50 text-slate-600 rounded-lg text-sm transition-colors">
+                    <i class="fa-solid fa-clock-rotate-left w-5 text-slate-400"></i> Historial
+                </a>
+                <a href="#" class="flex items-center justify-between px-3 py-2 hover:bg-slate-50 text-slate-600 rounded-lg text-sm transition-colors">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-regular fa-bell w-5 text-slate-400"></i> Alertas
+                    </span>
+                    <span class="bg-amber-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">5</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 hover:bg-slate-50 text-slate-600 rounded-lg text-sm transition-colors">
+                    <i class="fa-regular fa-note-sticky w-5 text-slate-400"></i> Notas
+                </a>
+            </div>
+
+            <!-- Main Categories List -->
+            <div class="bg-white rounded-xl border border-slate-200 p-3 flex flex-col gap-1 shadow-sm">
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider px-3 mb-2">Categorías principales</p>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-regular fa-file-lines text-slate-400"></i> Contratos de trabajo
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-regular fa-envelope text-slate-400"></i> Cartas y memorandos
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-shield-halved text-slate-400"></i> Reglamentos internos
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-scale-balanced text-slate-400"></i> Procesos disciplinarios
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-calculator text-slate-400"></i> Liquidaciones laborales
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-gavel text-slate-400"></i> Demandas laborales
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-reply-all text-slate-400"></i> Recursos y apelaciones
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-users text-slate-400"></i> Seguridad Social
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-book text-slate-400"></i> Normativa laboral boliviana
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-building-columns text-slate-400"></i> Jurisprudencia laboral
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-regular fa-file-code text-slate-400"></i> Formularios ministeriales
+                </a>
+                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 text-slate-600 rounded-lg text-xs font-medium">
+                    <i class="fa-solid fa-plus text-slate-400"></i> Todos los documentos
+                </a>
+            </div>
+
+            <!-- Promo Sidebar Box -->
+            <div class="bg-gradient-to-br from-[#0b2240] to-[#173e6e] text-white p-5 rounded-xl text-center relative overflow-hidden shadow-md">
+                <div class="absolute -top-6 -right-6 w-16 h-16 bg-white/5 rounded-full"></div>
+                <i class="fa-solid fa-crown text-amber-400 text-3xl mb-3"></i>
+                <h5 class="text-xs uppercase tracking-wider font-extrabold text-amber-400">Suscripción Profesional</h5>
+                <p class="text-[11px] text-slate-300 mt-2 mb-4 leading-relaxed">
+                    Acceso total a toda la biblioteca, descargas ilimitadas, actualizaciones y alertas, soporte especializado.
+                </p>
+                <button class="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full py-2 rounded-lg text-xs font-semibold transition-colors">
+                    Ver mi plan
+                </button>
+            </div>
+        </aside>
+
+        <!-- 2. MAIN CENTER CONTENT -->
+        <main class="col-span-12 lg:col-span-7 flex flex-col gap-6">
+            
+            <!-- Hero / Search Section -->
+            <section class="bg-[#0b2240] text-white p-8 rounded-2xl relative overflow-hidden shadow-md">
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-transparent to-transparent"></div>
+                
+                <div class="relative z-10 max-w-2xl">
+                    <h1 class="text-3xl font-extrabold tracking-tight mb-2">
+                        La biblioteca digital laboral más completa de Bolivia
+                    </h1>
+                    <p class="text-sm text-slate-300 mb-6">
+                        Documentos, normativa, jurisprudencia y herramientas para profesionales del área laboral.
+                    </p>
+
+                    <!-- Search Input -->
+                    <div class="flex items-center bg-white rounded-lg p-1 shadow-md mb-4">
+                        <span class="pl-3 text-slate-400">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" placeholder="¿Qué documento buscas?" class="w-full text-slate-800 text-sm focus:outline-none px-3 bg-transparent">
+                        <button class="bg-[#0b2240] hover:bg-blue-950 text-white px-5 py-2 rounded-md text-sm font-semibold transition-colors">
+                            Buscar
+                        </button>
+                    </div>
+
+                    <!-- Filter Tags Row -->
+                    <div class="flex flex-wrap items-center gap-2 text-xs mb-4">
+                        <span class="text-slate-400">Filtros rápidos:</span>
+                        <div class="relative">
+                            <button class="bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-md flex items-center gap-1.5 font-medium">
+                                Tipo de documento <i class="fa-solid fa-chevron-down text-[10px] text-slate-300"></i>
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <button class="bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-md flex items-center gap-1.5 font-medium">
+                                Fecha de publicación <i class="fa-solid fa-chevron-down text-[10px] text-slate-300"></i>
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <button class="bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-md flex items-center gap-1.5 font-medium">
+                                Año <i class="fa-solid fa-chevron-down text-[10px] text-slate-300"></i>
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <button class="bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-md flex items-center gap-1.5 font-medium">
+                                Categoría <i class="fa-solid fa-chevron-down text-[10px] text-slate-300"></i>
+                            </button>
+                        </div>
+                        <button class="bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-md font-semibold text-amber-400">
+                            <i class="fa-solid fa-sliders"></i> Más filtros
+                        </button>
+                    </div>
+
+                    <!-- Popular Tags -->
+                    <div class="flex flex-wrap items-center gap-2 text-[11px] text-slate-300">
+                        <span class="text-slate-400 font-medium">Más buscados:</span>
+                        <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-2 py-0.5 rounded transition-colors">Contrato indefinido</a>
+                        <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-2 py-0.5 rounded transition-colors">Despido justificado</a>
+                        <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-2 py-0.5 rounded transition-colors">Reglamento interno</a>
+                        <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-2 py-0.5 rounded transition-colors">Finiquito</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid Categories -->
+            <section>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="font-extrabold text-slate-800 text-lg">Categorías principales</h2>
+                    <a href="#" class="text-xs font-semibold text-blue-600 hover:underline">Ver todas <i class="fa-solid fa-arrow-right ml-0.5"></i></a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                    
+                    <!-- Cat 1 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-regular fa-file-lines text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Contratos de trabajo</span>
+                        <span class="text-[10px] text-slate-400 mt-1">128 documentos</span>
+                    </div>
+
+                    <!-- Cat 2 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-regular fa-envelope text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Cartas y memorandos</span>
+                        <span class="text-[10px] text-slate-400 mt-1">96 documentos</span>
+                    </div>
+
+                    <!-- Cat 3 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Reglamentos internos</span>
+                        <span class="text-[10px] text-slate-400 mt-1">64 documentos</span>
+                    </div>
+
+                    <!-- Cat 4 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-red-50 text-red-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-scale-balanced text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Procesos disciplinarios</span>
+                        <span class="text-[10px] text-slate-400 mt-1">53 documentos</span>
+                    </div>
+
+                    <!-- Cat 5 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Liquidaciones laborales</span>
+                        <span class="text-[10px] text-slate-400 mt-1">78 documentos</span>
+                    </div>
+
+                    <!-- Cat 6 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-sky-50 text-sky-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-gavel text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Demandas laborales</span>
+                        <span class="text-[10px] text-slate-400 mt-1">112 documentos</span>
+                    </div>
+
+                    <!-- Cat 7 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-reply-all text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Recursos y apelaciones</span>
+                        <span class="text-[10px] text-slate-400 mt-1">45 documentos</span>
+                    </div>
+
+                    <!-- Cat 8 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-teal-50 text-teal-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-users text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Seguridad Social</span>
+                        <span class="text-[10px] text-slate-400 mt-1">67 documentos</span>
+                    </div>
+
+                    <!-- Cat 9 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-orange-50 text-orange-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-book text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Normativa laboral</span>
+                        <span class="text-[10px] text-slate-400 mt-1">210 documentos</span>
+                    </div>
+
+                    <!-- Cat 10 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-violet-50 text-violet-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-building-columns text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Jurisprudencia</span>
+                        <span class="text-[10px] text-slate-400 mt-1">342 documentos</span>
+                    </div>
+
+                    <!-- Cat 11 -->
+                    <div class="bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-sm">
+                        <div class="w-10 h-10 bg-pink-50 text-pink-600 rounded-lg flex items-center justify-center mb-2">
+                            <i class="fa-regular fa-file-code text-lg"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-800 line-clamp-1">Formularios</span>
+                        <span class="text-[10px] text-slate-400 mt-1">89 documentos</span>
+                    </div>
+
+                    <!-- Cat 12: See More -->
+                    <div class="bg-slate-50 border border-dashed border-slate-300 hover:border-blue-400 rounded-xl p-4 flex flex-col items-center justify-center text-center cursor-pointer transition-all">
+                        <span class="text-xs font-semibold text-slate-500">Explorar todas las categorías</span>
+                        <a href="#" class="text-xs font-bold text-blue-600 mt-1">Ver más <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i></a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Recent Documents Table -->
+            <section class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <div>
+                        <h2 class="font-extrabold text-slate-800 text-lg">Documentos recientes</h2>
+                    </div>
+                    <!-- Filters/Tabs -->
+                    <div class="flex items-center gap-2 text-xs">
+                        <span class="text-slate-400">Ordenar por:</span>
+                        <div class="relative">
+                            <select class="bg-slate-50 border border-slate-200 text-slate-600 rounded-lg px-2.5 py-1.5 font-medium outline-none">
+                                <option>Fecha de publicación</option>
+                            </select>
+                        </div>
+                        <div class="bg-slate-100 p-0.5 rounded-lg flex gap-1">
+                            <button class="bg-white text-slate-800 px-2.5 py-1 rounded-md font-semibold shadow-sm">Más recientes</button>
+                            <button class="text-slate-500 hover:text-slate-800 px-2.5 py-1 rounded-md font-medium">Más descargados</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Container -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-100 text-slate-400 uppercase tracking-wider font-semibold">
+                                <th class="py-3 px-4">Documento</th>
+                                <th class="py-3 px-4">Tipo</th>
+                                <th class="py-3 px-4">Fecha de pub.</th>
+                                <th class="py-3 px-4">Última act.</th>
+                                <th class="py-3 px-4">Versión</th>
+                                <th class="py-3 px-4">Estado</th>
+                                <th class="py-3 px-4 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-600">
+                            
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="py-3.5 px-4 font-semibold text-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-regular fa-star text-slate-300 hover:text-amber-400 cursor-pointer"></i>
+                                        <span>Reglamento Interno de Trabajo 2026</span>
+                                    </div>
+                                    <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Modelo completo actualizado a normativa vigente</span>
+                                </td>
+                                <td class="py-3.5 px-4"><span class="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">Docx</span></td>
+                                <td class="py-3.5 px-4">14/05/2026</td>
+                                <td class="py-3.5 px-4">14/05/2026</td>
+                                <td class="py-3.5 px-4">1.0</td>
+                                <td class="py-3.5 px-4"><span class="bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-bold text-[10px]">Vigente</span></td>
+                                <td class="py-3.5 px-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="text-slate-400 hover:text-blue-600 p-1"><i class="fa-solid fa-download"></i></button>
+                                        <button class="text-slate-400 hover:text-red-500 p-1"><i class="fa-regular fa-file-pdf"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="py-3.5 px-4 font-semibold text-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-regular fa-star text-slate-300 hover:text-amber-400 cursor-pointer"></i>
+                                        <span>Memorando de llamada de atención</span>
+                                    </div>
+                                    <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Modelo de memorando para amonestaciones</span>
+                                </td>
+                                <td class="py-3.5 px-4"><span class="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">Docx</span></td>
+                                <td class="py-3.5 px-4">13/05/2026</td>
+                                <td class="py-3.5 px-4">13/05/2026</td>
+                                <td class="py-3.5 px-4">2.1</td>
+                                <td class="py-3.5 px-4"><span class="bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-bold text-[10px]">Vigente</span></td>
+                                <td class="py-3.5 px-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="text-slate-400 hover:text-blue-600 p-1"><i class="fa-solid fa-download"></i></button>
+                                        <button class="text-slate-400 hover:text-red-500 p-1"><i class="fa-regular fa-file-pdf"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="py-3.5 px-4 font-semibold text-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-regular fa-star text-slate-300 hover:text-amber-400 cursor-pointer"></i>
+                                        <span>Contrato de trabajo por obra determinada</span>
+                                    </div>
+                                    <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Contrato para proyectos o tareas específicas</span>
+                                </td>
+                                <td class="py-3.5 px-4"><span class="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">Docx</span></td>
+                                <td class="py-3.5 px-4">12/05/2026</td>
+                                <td class="py-3.5 px-4">12/05/2026</td>
+                                <td class="py-3.5 px-4">1.3</td>
+                                <td class="py-3.5 px-4"><span class="bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-bold text-[10px]">Vigente</span></td>
+                                <td class="py-3.5 px-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="text-slate-400 hover:text-blue-600 p-1"><i class="fa-solid fa-download"></i></button>
+                                        <button class="text-slate-400 hover:text-red-500 p-1"><i class="fa-regular fa-file-pdf"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="py-3.5 px-4 font-semibold text-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-regular fa-star text-slate-300 hover:text-amber-400 cursor-pointer"></i>
+                                        <span>Procedimiento de despido justificado</span>
+                                    </div>
+                                    <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Guía completa paso a paso</span>
+                                </td>
+                                <td class="py-3.5 px-4"><span class="bg-red-500 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">Pdf</span></td>
+                                <td class="py-3.5 px-4">10/05/2026</td>
+                                <td class="py-3.5 px-4">11/05/2026</td>
+                                <td class="py-3.5 px-4">3.0</td>
+                                <td class="py-3.5 px-4"><span class="bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-bold text-[10px]">Vigente</span></td>
+                                <td class="py-3.5 px-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="text-slate-400 hover:text-blue-600 p-1"><i class="fa-solid fa-download"></i></button>
+                                        <button class="text-slate-400 hover:text-red-500 p-1"><i class="fa-regular fa-file-pdf"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Row 5 -->
+                            <tr class="hover:bg-slate-50/80 transition-colors">
+                                <td class="py-3.5 px-4 font-semibold text-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-regular fa-star text-slate-300 hover:text-amber-400 cursor-pointer"></i>
+                                        <span>Tabla de indemnizaciones 2026</span>
+                                    </div>
+                                    <span class="block text-[10px] text-slate-400 font-normal mt-0.5">Cálculo actualizado según normativa laboral</span>
+                                </td>
+                                <td class="py-3.5 px-4"><span class="bg-green-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase">Xlsx</span></td>
+                                <td class="py-3.5 px-4">09/05/2026</td>
+                                <td class="py-3.5 px-4">09/05/2026</td>
+                                <td class="py-3.5 px-4">1.0</td>
+                                <td class="py-3.5 px-4"><span class="bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full font-bold text-[10px]">Vigente</span></td>
+                                <td class="py-3.5 px-4">
+                                    <div class="flex justify-center gap-2">
+                                        <button class="text-slate-400 hover:text-blue-600 p-1"><i class="fa-solid fa-download"></i></button>
+                                        <button class="text-slate-400 hover:text-red-500 p-1"><i class="fa-regular fa-file-pdf"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- View All Footer Link -->
+                <div class="text-center mt-4 pt-3 border-t border-slate-100">
+                    <a href="#" class="text-xs font-bold text-blue-600 hover:underline">Ver todos los documentos <i class="fa-solid fa-arrow-right ml-0.5"></i></a>
+                </div>
+            </section>
+
+            <!-- Documentos Inteligentes Generator -->
+            <section class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+                <div class="mb-5">
+                    <span class="bg-blue-50 text-blue-700 text-[10px] font-bold px-2 py-1 rounded">MÓDULO PREMIUM</span>
+                    <h2 class="font-extrabold text-slate-800 text-lg mt-1.5">Documentos Inteligentes <span class="text-sm font-normal text-slate-400">(Genera tus documentos en minutos)</span></h2>
+                    <p class="text-xs text-slate-500 mt-1">Completa los datos y genera automáticamente documentos personalizados listos para usar.</p>
+                </div>
+
+                <!-- Form Steps Menu -->
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-5 overflow-x-auto gap-4">
+                    <button class="text-blue-600 border-b-2 border-blue-600 pb-2 text-xs font-bold flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-regular fa-file-lines"></i> Contratos
+                    </button>
+                    <button class="text-slate-400 hover:text-slate-600 pb-2 text-xs font-medium flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-regular fa-envelope"></i> Memorandos
+                    </button>
+                    <button class="text-slate-400 hover:text-slate-600 pb-2 text-xs font-medium flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-regular fa-clipboard"></i> Actas
+                    </button>
+                    <button class="text-slate-400 hover:text-slate-600 pb-2 text-xs font-medium flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-user-minus"></i> Cartas de despido
+                    </button>
+                    <button class="text-slate-400 hover:text-slate-600 pb-2 text-xs font-medium flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-calculator"></i> Liquidaciones
+                    </button>
+                </div>
+
+                <!-- Two Column Preview Block -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Left: Form -->
+                    <div class="md:col-span-7 flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase">Datos del documento</h4>
+                            <button class="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded">Crear documento inteligente</button>
+                        </div>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-500 mb-1">Nombre de la empresa</label>
+                                <input type="text" value="Empresa S.A." class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-500 mb-1">Nombre del trabajador</label>
+                                <input type="text" value="Juan Pérez" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 outline-none focus:border-blue-500">
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-[11px] font-bold text-slate-500 mb-1">Cargo</label>
+                                    <input type="text" value="Analista Contable" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 outline-none focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold text-slate-500 mb-1">Fecha de ingreso</label>
+                                    <input type="text" value="01/03/2024" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-800 outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg text-xs font-bold tracking-wide transition-colors shadow-sm mt-2">
+                            Generar documento
+                        </button>
+                    </div>
+
+                    <!-- Right: Live Preview Frame -->
+                    <div class="md:col-span-5 bg-slate-50 rounded-xl p-4 border border-slate-200 flex flex-col justify-between relative min-h-[250px]">
+                        <div>
+                            <span class="block text-[8px] uppercase tracking-wider font-extrabold text-[#0b2240] text-center border-b border-slate-200 pb-2 mb-3">
+                                CONTRATO DE TRABAJO A TÉRMINO INDEFINIDO
+                            </span>
+                            <!-- Placeholder Text -->
+                            <div class="space-y-2">
+                                <div class="h-2 bg-slate-200 rounded w-5/6"></div>
+                                <div class="h-2 bg-slate-200 rounded w-full"></div>
+                                <div class="h-2 bg-slate-200 rounded w-4/5"></div>
+                                <div class="h-2 bg-slate-200 rounded w-2/3"></div>
+                                <div class="h-2 bg-slate-200 rounded w-3/4"></div>
+                                <div class="h-2 bg-slate-200 rounded w-1/2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Success Generate Badge -->
+                        <div class="mt-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2.5 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[10px]">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                                <div>
+                                    <span class="block text-[10px] font-bold text-emerald-800">Documento generado</span>
+                                    <span class="block text-[8px] text-emerald-600">con éxito</span>
+                                </div>
+                            </div>
+                            <button class="bg-[#0b2240] hover:bg-blue-950 text-white w-8 h-8 rounded flex items-center justify-center transition-colors">
+                                <i class="fa-solid fa-download text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subscription Plans Comparison Grid -->
+            <section class="mt-2">
+                <div class="mb-4">
+                    <h2 class="font-extrabold text-slate-800 text-lg">Elige tu plan y accede a todo el contenido</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <!-- Column 1: Pricing cards -->
+                    <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        
+                        <!-- Plan 1 -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+                            <div>
+                                <h3 class="font-bold text-xs text-slate-800">Plan Mensual</h3>
+                                <span class="block text-[10px] text-slate-400 mt-0.5">Ideal para pruebas o necesidades puntuales</span>
+                                <div class="my-4">
+                                    <span class="text-xl font-extrabold text-slate-800">Bs 49</span>
+                                    <span class="text-slate-400 text-[10px]"> / mes</span>
+                                </div>
+                                <ul class="space-y-1.5 text-[10px] text-slate-600">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Acceso a todos los documentos</li>
+                                    <li class="line-through text-slate-300"><i class="fa-solid fa-check mr-1.5"></i> Descargas ilimitadas</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Alertas legales</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Soporte por correo</li>
+                                </ul>
+                            </div>
+                            <button class="w-full border border-blue-600 hover:bg-blue-50 text-blue-600 text-[11px] font-bold py-2 rounded-lg mt-5 transition-colors">
+                                Seleccionar plan
+                            </button>
+                        </div>
+
+                        <!-- Plan 2 (Anual - Popular) -->
+                        <div class="bg-white border-2 border-emerald-500 rounded-xl p-4 flex flex-col justify-between shadow-md relative">
+                            <span class="absolute -top-2.5 right-4 bg-emerald-500 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Más Popular</span>
+                            <div>
+                                <h3 class="font-bold text-xs text-slate-800">Plan Profesional Anual</h3>
+                                <span class="block text-[10px] text-slate-400 mt-0.5 font-medium">Acceso completo por 12 meses</span>
+                                <div class="my-4">
+                                    <span class="text-2xl font-extrabold text-slate-800">Bs 399</span>
+                                    <span class="text-slate-400 text-[10px]"> / año</span>
+                                </div>
+                                <ul class="space-y-1.5 text-[10px] text-slate-600">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Todo lo del plan mensual</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Actualizaciones automáticas</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Documentos Inteligentes</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Calculadoras laborales</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Capacitación incluida</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Soporte prioritario</li>
+                                </ul>
+                            </div>
+                            <button class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold py-2 rounded-lg mt-5 flex items-center justify-center gap-1.5 transition-colors">
+                                Seleccionado <i class="fa-solid fa-check"></i>
+                            </button>
+                        </div>
+
+                        <!-- Plan 3 -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-sm">
+                            <div>
+                                <h3 class="font-bold text-xs text-slate-800">Plan Estudiantil</h3>
+                                <span class="block text-[10px] text-slate-400 mt-0.5">Para estudiantes de Derecho</span>
+                                <div class="my-4">
+                                    <span class="text-xl font-extrabold text-slate-800">Bs 199</span>
+                                    <span class="text-slate-400 text-[10px]"> / año</span>
+                                </div>
+                                <ul class="space-y-1.5 text-[10px] text-slate-600">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Acceso a documentos básicos</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Descargas limitadas</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Alertas legales</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Soporte por correo</li>
+                                </ul>
+                            </div>
+                            <button class="w-full border border-blue-600 hover:bg-blue-50 text-blue-600 text-[11px] font-bold py-2 rounded-lg mt-5 transition-colors">
+                                Seleccionar plan
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Column 2: Why Subscribe Panel -->
+                    <div class="md:col-span-4 bg-[#0b2240] text-white rounded-xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-sm tracking-wide mb-3">¿Por qué suscribirse?</h4>
+                            <ul class="space-y-3 text-[10px] text-slate-300">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5"></i>
+                                    <span>Biblioteca actualizada constantemente con la normativa nacional.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5"></i>
+                                    <span>Documentos y modelos revisados por expertos laboralistas.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5"></i>
+                                    <span>Ahorra tiempo y trabaja seguro en tus trámites.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5"></i>
+                                    <span>Garantía de cumplimiento con la normativa boliviana.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-0.5"></i>
+                                    <span>Accede desde cualquier dispositivo 24/7.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-end mt-4">
+                            <i class="fa-solid fa-certificate text-emerald-400 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 3. RIGHT SIDEBAR -->
+        <aside class="col-span-12 lg:col-span-3 flex flex-col gap-6">
+            
+            <!-- Subscription active status card -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    <h4 class="text-xs font-bold text-emerald-600">Tu suscripción está activa</h4>
+                </div>
+                <div>
+                    <span class="block text-sm font-bold text-slate-800">Plan Profesional Anual</span>
+                    <span class="block text-[11px] text-slate-400 mt-0.5">Vence el 15/06/2025</span>
+                </div>
+                
+                <!-- Progress bar -->
+                <div class="mt-4">
+                    <div class="flex items-center justify-between text-[10px] font-semibold text-slate-500 mb-1">
+                        <span>Quedan 231 días</span>
+                        <span>63% restante</span>
+                    </div>
+                    <div class="w-full bg-slate-100 rounded-full h-1.5">
+                        <div class="bg-blue-600 h-1.5 rounded-full" style="width: 63%"></div>
+                    </div>
+                </div>
+
+                <button class="w-full bg-[#0b2240] hover:bg-blue-950 text-white text-xs font-bold py-2.5 rounded-lg mt-4 transition-colors">
+                    Ver detalles de mi plan
+                </button>
+            </div>
+
+            <!-- Legal Alerts Box -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-100">
+                    <h4 class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> Alertas legales
+                    </h4>
+                    <span class="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-1.5 py-0.5 rounded-full">5 nuevas</span>
+                </div>
+                
+                <!-- Alert list -->
+                <div class="space-y-3.5">
+                    
+                    <!-- Alert 1 -->
+                    <div class="flex items-start justify-between gap-2">
+                        <div>
+                            <span class="block text-[11px] font-bold text-slate-800 hover:text-blue-600 cursor-pointer">Nuevo Decreto Supremo 5132</span>
+                            <span class="block text-[10px] text-slate-400 mt-0.5">Modifica indemnizaciones laborales</span>
+                        </div>
+                        <span class="text-[9px] font-semibold text-slate-400 shrink-0">Hoy</span>
+                    </div>
+
+                    <!-- Alert 2 -->
+                    <div class="flex items-start justify-between gap-2">
+                        <div>
+                            <span class="block text-[11px] font-bold text-slate-800 hover:text-blue-600 cursor-pointer">Nueva Resolución Ministerial 234</span>
+                            <span class="block text-[10px] text-slate-400 mt-0.5">Procedimiento de inspecciones</span>
+                        </div>
+                        <span class="text-[9px] font-semibold text-slate-400 shrink-0">Ayer</span>
+                    </div>
+
+                    <!-- Alert 3 -->
+                    <div class="flex items-start justify-between gap-2">
+                        <div>
+                            <span class="block text-[11px] font-bold text-slate-800 hover:text-blue-600 cursor-pointer">Jurisprudencia destacada</span>
+                            <span class="block text-[10px] text-slate-400 mt-0.5">TC/0123/2024-S2</span>
+                        </div>
+                        <span class="text-[9px] font-semibold text-slate-400 shrink-0">2 días</span>
+                    </div>
+
+                </div>
+
+                <a href="#" class="block text-center text-[11px] font-bold text-blue-600 hover:underline mt-4 pt-3 border-t border-slate-100">
+                    Ver todas las alertas <i class="fa-solid fa-arrow-right ml-0.5"></i>
+                </a>
+            </div>
+
+            <!-- Premium Tools Navigation -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="mb-3.5 pb-2 border-b border-slate-100">
+                    <h4 class="text-xs font-bold text-slate-800">Herramientas Premium</h4>
+                </div>
+
+                <div class="space-y-3">
+                    
+                    <!-- Tool 1 -->
+                    <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors">
+                        <div class="w-8 h-8 rounded bg-amber-50 text-amber-600 flex items-center justify-center text-sm shrink-0">
+                            <i class="fa-regular fa-file-lines"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-800">Documentos Inteligentes</span>
+                            <span class="block text-[9px] text-slate-400">Genera documentos personalizados</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 2 -->
+                    <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors">
+                        <div class="w-8 h-8 rounded bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm shrink-0">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-800">Calculadoras Laborales</span>
+                            <span class="block text-[9px] text-slate-400">Aguinaldo, finiquito, indemnización y más</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 3 -->
+                    <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors">
+                        <div class="w-8 h-8 rounded bg-blue-50 text-blue-600 flex items-center justify-center text-sm shrink-0">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-800">Casos Prácticos</span>
+                            <span class="block text-[9px] text-slate-400">Análisis de casos reales</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 4 -->
+                    <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors">
+                        <div class="w-8 h-8 rounded bg-purple-50 text-purple-600 flex items-center justify-center text-sm shrink-0">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-800">Preguntas Frecuentes</span>
+                            <span class="block text-[9px] text-slate-400">Respuestas a dudas comunes</span>
+                        </div>
+                    </div>
+
+                    <!-- Tool 5 -->
+                    <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors">
+                        <div class="w-8 h-8 rounded bg-red-50 text-red-600 flex items-center justify-center text-sm shrink-0">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-800">Cursos y Capacitación</span>
+                            <span class="block text-[9px] text-slate-400">Videos y materiales exclusivos</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold py-2.5 rounded-lg mt-4 transition-colors">
+                    Ir a herramientas
+                </button>
+            </div>
+
+            <!-- News/Novedades Panel -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="mb-3.5 pb-2 border-b border-slate-100">
+                    <h4 class="text-xs font-bold text-slate-800">Novedades</h4>
+                </div>
+
+                <div class="space-y-4 text-xs">
+                    <!-- Item 1 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-800 hover:text-blue-600 cursor-pointer">Decreto Supremo 5132</span>
+                            <span class="text-[9px] text-slate-400 font-semibold">14/05/2026</span>
+                        </div>
+                        <p class="text-slate-500 text-[11px] leading-relaxed">Modifica disposiciones sobre indemnizaciones laborales.</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-800 hover:text-blue-600 cursor-pointer">Resolución Ministerial 234/2026</span>
+                            <span class="text-[9px] text-slate-400 font-semibold">13/05/2026</span>
+                        </div>
+                        <p class="text-slate-500 text-[11px] leading-relaxed">Aprueba nuevo procedimiento para inspecciones laborales.</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-800 hover:text-blue-600 cursor-pointer">Sentencia Constitucional 0123/2024-S2</span>
+                            <span class="text-[9px] text-slate-400 font-semibold">12/05/2026</span>
+                        </div>
+                        <p class="text-slate-500 text-[11px] leading-relaxed">Sobre estabilidad laboral reforzada.</p>
+                    </div>
+                </div>
+
+                <a href="#" class="block text-center text-[11px] font-bold text-blue-600 hover:underline mt-4 pt-3 border-t border-slate-100">
+                    Ver todas las novedades <i class="fa-solid fa-arrow-right ml-0.5"></i>
+                </a>
+            </div>
+
+        </aside>
+
+    </div>
+
+</body>
+</html>
